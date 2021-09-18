@@ -1,0 +1,72 @@
+.blog {
+  width: 100%;
+  min-height: 100vh;
+  &__banner {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background: url("/images/ocean.jpg") center/cover no-repeat;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(45deg, $color-pink, $color-cyan, $color-teal);
+      filter: opacity(0.8);
+    }
+    &::after {
+      position: absolute;
+      content: "Blogs";
+      font-family: "Great Vibes", cursive;
+      font-size: 150px;
+      text-align: center;
+      line-height: 500px;
+      letter-spacing: 5px;
+      height: 100%;
+      width: 100%;
+      @include media-md {
+        font-size: 120px;
+      }
+      @include media-sm {
+        font-size: 90px;
+      }
+    }
+  }
+  &__content {
+    padding: 3rem 0;
+    &__categories {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      .item {
+        background: $color-background-dark1;
+        color: $color-light;
+        padding: 10px 25px;
+        border-radius: 4px;
+        font-size: 1rem;
+        text-transform: capitalize;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+    &__posts {
+      padding-top: 4rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      @include media-lg {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include media-sm {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

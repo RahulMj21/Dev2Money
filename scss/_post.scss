@@ -1,0 +1,57 @@
+.post {
+  width: 100%;
+  border-radius: 7px;
+  background: $color-background-bg;
+  cursor: pointer;
+  @include transitionEase;
+  &:hover {
+    transform: translateY(-10px);
+  }
+  &__content {
+    position: relative;
+    padding: 2rem;
+  }
+  &__image {
+    border-radius: 7px 7px 0 0;
+  }
+  &__date {
+    font-size: 12px;
+    background: $color-background-dark1;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    margin-bottom: 1rem;
+    color: $color-gray;
+  }
+  &__heading {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+    color: $color-grey-light;
+  }
+  &__excerpt {
+    color: $color-gray;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 1.6rem;
+  }
+  &__button {
+    color: $color-background-dark1;
+    background: $color-white;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    &:active {
+      transform: scale(0.98);
+    }
+    &:hover {
+      background: $color-light;
+      color: $color-gray-dark;
+      @include transitionEase;
+    }
+  }
+}

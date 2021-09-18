@@ -1,0 +1,26 @@
+.products {
+  position: relative;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  padding-top: 100px;
+  &__empty {
+    position: relative;
+    padding-top: 5rem;
+    height: 100%;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+  &__heading {
+    color: $color-white;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+  }
+}

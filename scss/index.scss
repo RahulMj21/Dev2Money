@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import "./variables";
+@import "./mixins";
+@import "./mediaQueries";
+@import "./home";
+@import "./header";
+@import "./landingPage";
+@import "./usefulness";
+@import "./blog";
+@import "./post";
+@import "./singlePost";
+@import "./products";
+@import "./footer";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  min-height: 100vh;
+  background: $color-background-dark;
+  color: $color-white;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+input,
+button {
+  outline: none;
+  border: none;
+}
+.container {
+  margin: auto;
+  max-width: 90%;
+  width: 1024px;
+}
+.subscribe {
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 600px;
+  max-width: 90%;
+  z-index: 2;
+  &__input {
+    width: 75%;
+    background: linear-gradient(rgba(255, 255, 255, 0.15));
+    color: $color-grey-light;
+    padding: 0 20px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-radius: 30px 0 0 30px;
+    border: 0.2px solid rgba(255, 255, 255, 0.2);
+    &::placeholder {
+      text-transform: capitalize;
+    }
+  }
+  &__button {
+    width: 25%;
+    background: $color-white;
+    border-radius: 0 30px 30px 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    @include media-vsm {
+      padding: 0 5px;
+    }
+    &:hover {
+      background: $color-orange;
+      color: white;
+      @include transitionEase;
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+    @include media-sm {
+      font-size: 13px;
+    }
+  }
+}
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  background: $color-orange;
+  z-index: 1;
+  &.circle1 {
+    top: 22%;
+    right: -90px;
+    height: 220px;
+    width: 220px;
+    filter: blur(80px);
+  }
+  &.circle2 {
+    top: 50%;
+    left: -70px;
+    height: 200px;
+    width: 200px;
+    filter: blur(75px);
+  }
+}
+.animate {
+  font-size: 1.5rem;
+  display: inline-block;
+  transform: translateY(-5px);
+  animation: upDown 2s cubic-bezier(0, 0.85, 0.32, 1.28) infinite;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+.overlay {
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  transform: scale(0);
+  @include transitionEase;
+  @include media-md {
+    &.show {
+      transform: scale(1);
+    }
+  }
+}

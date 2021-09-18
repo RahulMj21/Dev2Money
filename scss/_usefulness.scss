@@ -1,0 +1,40 @@
+.usefulness {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  @include media-md {
+    flex-direction: column;
+  }
+  &__img {
+    width: 450px;
+    @include media-lg {
+      width: 300px;
+    }
+    @include media-md {
+      width: 400px;
+    }
+    @include media-vsm {
+      width: 300px;
+    }
+  }
+  &__text {
+    margin-top: -1rem;
+    &__heading {
+      color: $color-white;
+      font-size: 3rem;
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+    }
+    &__article {
+      color: $color-grey-light;
+      font-size: 19px;
+      letter-spacing: 0.3px;
+      line-height: 1.9;
+      text-align: justify;
+    }
+  }
+}
