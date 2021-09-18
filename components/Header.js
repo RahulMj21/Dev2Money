@@ -12,7 +12,7 @@ const Header = () => {
   const [showNav, setShowNav] = useState(false);
 
   const fixHeader = () => {
-    if (window.scrollY >= 200) {
+    if (window.scrollY >= 100) {
       setIsActive(true);
     } else {
       setIsActive(false);

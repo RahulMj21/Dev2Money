@@ -40,7 +40,6 @@
   &__right {
     position: relative;
     display: flex;
-    gap: 5rem;
     z-index: 1000;
     @include media-md {
       position: absolute;
@@ -48,9 +47,11 @@
       top: 50%;
       left: 50%;
       transform: translate(200%, 50%);
+      opacity: 0;
       transition: transform 0.5s cubic-bezier(0, 0.85, 0.32, 1.28);
       &.show {
         transform: translate(-50%, 50%);
+        opacity: 1;
         transition-delay: 0.4s;
       }
     }
@@ -58,7 +59,6 @@
   &__links,
   &__socialLinks {
     display: flex;
-    gap: 2rem;
     cursor: pointer;
     a {
       cursor: pointer;
@@ -72,13 +72,30 @@
   &__links {
     font-size: 1.1rem;
     letter-spacing: 0.3px;
+    margin-right: 4rem;
+    a {
+      &:not(last-child) {
+        margin-right: 2rem;
+      }
+    }
     @include media-md {
+      margin: 0 0 5rem 0;
       flex-direction: column;
       align-items: center;
+      a {
+        &:not(last-child) {
+          margin-bottom: 2rem;
+        }
+      }
     }
   }
   &__socialLinks {
     font-size: 1.5rem;
+    a {
+      &:not(last-child) {
+        margin-right: 2rem;
+      }
+    }
   }
   &__bars {
     position: relative;

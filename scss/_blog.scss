@@ -39,7 +39,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
       .item {
         background: $color-background-dark1;
@@ -50,13 +49,17 @@
         text-transform: capitalize;
         letter-spacing: 0.4px;
         cursor: pointer;
+        margin-bottom: 1rem;
         &:active {
           transform: scale(0.98);
+        }
+        &:not(:last-child) {
+          margin-right: 1rem;
         }
       }
     }
     &__posts {
-      padding-top: 4rem;
+      padding-top: 3rem;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
