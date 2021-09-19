@@ -64,6 +64,9 @@ button {
     &::placeholder {
       text-transform: capitalize;
     }
+    @include media-vsm {
+      width: 70%;
+    }
   }
   &__button {
     width: 25%;
@@ -74,6 +77,7 @@ button {
     cursor: pointer;
     @include media-vsm {
       padding: 0 5px;
+      width: 30%;
     }
     &:hover {
       background: $color-orange;
@@ -113,6 +117,7 @@ button {
   z-index: 2;
   font-size: 1.5rem;
   display: inline-block;
+  background: transparent;
   transform: translateY(-5px);
   animation: upDown 2s cubic-bezier(0, 0.85, 0.32, 1.28) infinite;
 }
