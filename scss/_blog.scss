@@ -53,6 +53,11 @@
         &:active {
           transform: scale(0.98);
         }
+        &:hover {
+          background: $color-grey-1;
+          color: $color-light;
+          @include transitionEase;
+        }
         &:not(:last-child) {
           margin-right: 1rem;
         }

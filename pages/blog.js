@@ -4,6 +4,7 @@ import path from "path";
 import Post from "../components/Post";
 import matter from "gray-matter";
 import { sortByDate } from "../utils";
+import { categories } from "../constants";
 
 const Blogs = ({ posts }) => {
   return (
@@ -14,11 +15,13 @@ const Blogs = ({ posts }) => {
       <div className="blog__banner" />
       <main className="container blog__content">
         <div className="blog__content__categories">
-          <button className="item">HTML</button>
-          <button className="item">CSS</button>
-          <button className="item">Javascript</button>
-          <button className="item">PHP</button>
-          <button className="item">python</button>
+          {categories.map((item) => {
+            return (
+              <button className="item" key={item.category}>
+                {item.text}
+              </button>
+            );
+          })}
         </div>
         <div className="blog__content__posts">
           {posts.map((post) => {
